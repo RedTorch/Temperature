@@ -1,0 +1,10 @@
+double degrees
+char type
+
+public Temperature(double dDegrees, char cType)
+public Temperature(double dDegrees)   //defaults to Celsius
+public Temperature(char cType)   //defaults to 0.0 degrees
+public Temperature()   //defaults to 0.0 degrees Celsius
+
+public double getC()   //Celsius
+public double getF()   //fahrenheit
