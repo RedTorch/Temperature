@@ -6,5 +6,17 @@ public Temperature(double dDegrees)   //defaults to Celsius
 public Temperature(char cType)   //defaults to 0.0 degrees
 public Temperature()   //defaults to 0.0 degrees Celsius
 
+public void writeOutput()   //prints temp(C), temp(F)
+public void writeC()   //prints temp(C)
+public void writeF()   //prints temp(F)
+
 public double getC()   //Celsius
 public double getF()   //fahrenheit
+
+public void setTemperature(double dDegrees, char cType)
+public void setDegrees(double dDegrees)
+public void setType(char cType)
+
+public boolean equals()
+
+public String toString()   //returns type & value
