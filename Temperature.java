@@ -1,45 +1,51 @@
-Public class Temperature{
+import java.util.*;
+public class Temperature{
 
 	double degrees;
 	char type;
+    Scanner scanner;
 
 	public Temperature(double dDegrees, char cType)
 	{
 		degrees = dDegrees;
 		type = cType;
+        scanner = new Scanner(System.in);
 	}
 	public Temperature(double dDegrees)   //defaults to Celsius
 	{
 		degrees = dDegrees;
-		type = "C";
+		type = 'C';
+        scanner = new Scanner(System.in);
 	}
 	public Temperature(char cType)   //defaults to 0.0 degrees
 	{
 		degrees = 0.0;
 		type = cType;
+        scanner = new Scanner(System.in);
 	}
 	public Temperature()   //defaults to 0.0 degrees Celsius
 	{
-		type = "C";
+		type = 'C';
 		degrees = 0.0;
+        scanner = new Scanner(System.in);
 	}
 
 	public void writeOutput()   //prints temp(C), temp(F)
 	{
-		system.out.println("<" + Math.round(degrees*10)/10.0 + "> degrees <" + type + ">");
+		System.out.println("<" + Math.round(degrees*10)/10.0 + "> degrees <" + type + ">");
 	}
 	public void writeC()   //prints temp(C)
 	{
-		system.out.println("<" + Math.round(degrees*10)/10.0 + "> degrees");
+		System.out.println("<" + Math.round(degrees*10)/10.0 + "> degrees");
 	}
 	public void writeF()   //prints temp(F)
 	{
-		system.out.println("Type <" + type + ">");
+		System.out.println("Type <" + type + ">");
 	}
 
 	public double getC()   //Celsius
 	{
-		if(type == "F")
+		if(type == 'F')
 		{
 			return (Math.round(((degrees * (9/5)) + 32)*10)/10.0);
 		}
@@ -50,7 +56,7 @@ Public class Temperature{
 	}
 	public double getF()   //fahrenheit
 	{
-		if(type == "C")
+		if(type == 'C')
 		{
 			return (Math.round(((degrees * (9/5)) + 32)*10)/10.0);
 		}
@@ -59,21 +65,20 @@ Public class Temperature{
 			return Math.round(degrees*10)/10.0;
 		}
 	}
-
-	public void setTemperature(double dDegrees, char cType)
+	public void set(double dDegrees, char cType)
 	{
 		degrees = dDegrees;
 		type = cType;
 	}
-	public void setDegrees(double dDegrees)
+	public void set(double dDegrees)
 	{
 		degrees = dDegrees;
 	}
-	public void setType(char cType)
+	public void set(char cType)
 	{
-		if(type != cType && (cType == "C" || cType == "F"))
+		if(type != cType && (cType == 'C' || cType == 'F'))
 		{
-			if(type == "C")
+			if(type == 'C')
 			{
 				degrees = (degrees-32) * (5/9);
 			}
@@ -85,12 +90,31 @@ Public class Temperature{
 		}
 	}
 
-	public boolean equals(Temperature otherTemp) //WORK ON LATER
+	/*public boolean equals(Temperature otherTemp) //WORK ON LATER
 	{
 		if(otherTemp.getC())
 	}
 
 	public String toString()   //returns type & value; Math.round(temperature*10)/10.0
-
+    */
 	public void readInput()
+    { 
+        // :important:
+        // I am using nextLine() to get String.
+        // This is because nextDouble skips nextLine for some reason
+        String inputDegrees;  // Intentional!
+        String inputType;     // Intentional!
+        
+        System.out.println("Enter the degrees desired");
+        inputDegrees = scanner.nextLine();
+        do { // I am not sure if this is needed
+            System.out.println("Enter the F for fahrenheit or C for Celsius");
+            inputType = scanner.nextLine();
+        }while(inputType.length() != 1);  // this is to prevent typo
+        
+        degrees = Double.parseDouble(inputDegrees);
+        type = (char) inputType.charAt(0);  // There is no nextChar() so 
+                                            // I had to find a way to convert string to char
+                                            // !BUG! There is no restriction of what character it is
+    }
 }
