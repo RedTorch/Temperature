@@ -3,31 +3,31 @@ public class Temperature{
 
 	double degrees;
 	char type;
-    Scanner scanner;
+        Scanner scanner;
 
 	public Temperature(double dDegrees, char cType)
 	{
 		degrees = dDegrees;
 		type = cType;
-        scanner = new Scanner(System.in);
+                scanner = new Scanner(System.in);
 	}
 	public Temperature(double dDegrees)   //defaults to Celsius
 	{
 		degrees = dDegrees;
 		type = 'C';
-        scanner = new Scanner(System.in);
+                scanner = new Scanner(System.in);
 	}
 	public Temperature(char cType)   //defaults to 0.0 degrees
 	{
 		degrees = 0.0;
 		type = cType;
-        scanner = new Scanner(System.in);
+                scanner = new Scanner(System.in);
 	}
 	public Temperature()   //defaults to 0.0 degrees Celsius
 	{
 		type = 'C';
 		degrees = 0.0;
-        scanner = new Scanner(System.in);
+                scanner = new Scanner(System.in);
 	}
 
 	public void writeOutput()   //prints temp(C), temp(F)
@@ -90,15 +90,15 @@ public class Temperature{
 		}
 	}
 
-	/*public boolean equals(Temperature otherTemp) //WORK ON LATER
+      /*public boolean equals(Temperature otherTemp) //WORK ON LATER
 	{
 		if(otherTemp.getC())
 	}
 
 	public String toString()   //returns type & value; Math.round(temperature*10)/10.0
-    */
+      */
 	public void readInput()
-    { 
+        { 
         // :important:
         // I am using nextLine() to get String.
         // This is because nextDouble skips nextLine for some reason
