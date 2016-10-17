@@ -3,13 +3,13 @@ public class Temperature{
 
 	double degrees;
 	char type;
-        Scanner scanner;
+	Scanner scanner;
 
 	public Temperature(double dDegrees, char cType)
 	{
 		degrees = dDegrees;
 		type = cType;
-                scanner = new Scanner(System.in);
+		scanner = new Scanner(System.in);
 	}
 	public Temperature(double dDegrees)   //defaults to Celsius
 	{
@@ -21,7 +21,7 @@ public class Temperature{
 	{
 		degrees = 0.0;
 		type = cType;
-                scanner = new Scanner(System.in);
+		scanner = new Scanner(System.in);
 	}
 	public Temperature()   //defaults to 0.0 degrees Celsius
 	{
@@ -90,7 +90,7 @@ public class Temperature{
 		}
 	}
 
-    public boolean equals(Temperature otherTemp) //WORK ON LATER
+        public boolean equals(Temperature otherTemp) //WORK ON LATER
 	{
 		if(otherTemp.getC() == getC()){
 			return true;
@@ -127,12 +127,12 @@ public class Temperature{
         do { // I am not sure if this is needed
             System.out.println("Enter the F for fahrenheit or C for Celsius");
             inputType = scanner.nextLine();
-        }while(inputType.length() != 1);  // this is to prevent typo
+        }while((!inputType.toUpperCase().equals("C") && 
+        		!inputType.toUpperCase().equals("F")));  // this is to prevent typo
         
         degrees = Double.parseDouble(inputDegrees);
-        type = (char)(inputType.charAt(0));  // There is no nextChar() so 
+        type = (char)(inputType.toUpperCase().charAt(0));  // There is no nextChar() so 
                                             // I had to find a way to convert string to char
-                                            // !BUG! There is no restriction of what character it is
 
         //-----------------------------------------------------------------------------------------------
         //------------------------------------------IMPORTANT NOTE---------------------------------------
