@@ -32,15 +32,15 @@ public class Temperature{
 
 	public void writeOutput()   //prints temp(C), temp(F)
 	{
-		System.out.println("<" + Math.round(degrees*10)/10.0 + "> degrees <" + type + ">");
+		System.out.println("<" + Math.round(getC()*10)/10.0 + "> degrees Celsius, <" + Math.round(getF()*10)/10.0 + "> degrees Fahrenheit");
 	}
 	public void writeC()   //prints temp(C)
 	{
-		System.out.println("<" + Math.round(degrees*10)/10.0 + "> degrees");
+		System.out.println("<" + Math.round(getC()*10)/10.0 + "> degrees Celsius");
 	}
 	public void writeF()   //prints temp(F)
 	{
-		System.out.println("Type <" + type + ">");
+		System.out.println("<" + Math.round(getF()*10)/10.0 + "> degrees Fahrenheit");
 	}
 
 	public double getC()   //Celsius
@@ -90,13 +90,30 @@ public class Temperature{
 		}
 	}
 
-      /*public boolean equals(Temperature otherTemp) //WORK ON LATER
+    public boolean equals(Temperature otherTemp) //WORK ON LATER
 	{
-		if(otherTemp.getC())
+		if(otherTemp.getC() == getC()){
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	public String toString()   //returns type & value; Math.round(temperature*10)/10.0
-      */
+	{
+		String toReturn = "ERROR! Invalid value of TYPE variable (not C or F). Called in toString";
+		if(type == 'C')
+		{
+			toReturn = Math.round(getC()*10)/10.0 + " C";
+		}
+		else if(type == 'F')
+		{
+			toReturn = Math.round(getF()*10)/10.0 + " F";
+		}
+		return toReturn;
+	}
 	public void readInput()
         { 
         // :important:
@@ -113,8 +130,17 @@ public class Temperature{
         }while(inputType.length() != 1);  // this is to prevent typo
         
         degrees = Double.parseDouble(inputDegrees);
-        type = (char) inputType.charAt(0);  // There is no nextChar() so 
+        type = (char)(inputType.charAt(0));  // There is no nextChar() so 
                                             // I had to find a way to convert string to char
                                             // !BUG! There is no restriction of what character it is
+
+        //-----------------------------------------------------------------------------------------------
+        //------------------------------------------IMPORTANT NOTE---------------------------------------
+        //-----------------------------------------------------------------------------------------------
+        // I changed the above line:
+        //      type = (char) inputType.charAt(0);
+        // to this:
+        //      type = (char)(inputType.charAt(0));
+        // (just to be careful)
     }
 }
