@@ -30,12 +30,14 @@ Assignment #5 ("Temperature") for CS111B
 -   [ ] readInput() to promp user to write degrees and type
 
 Important:
-  problem: Test case 2
+  Problem: Test case 2
            using readInput()
              I entered 0 for degrees
              F for type
            output:
              <32.0> degrees Celsius, <0.0> degrees Fahrenheit
+           Should:
+             <32.0> degrees Celsius, <-17.8> degrees Fahrenheit
            Possible cause:
              Math logic
              Wrong order
