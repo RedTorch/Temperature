@@ -15,7 +15,7 @@ public class Temperature{
 	{
 		degrees = dDegrees;
 		type = 'C';
-                scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
 	}
 	public Temperature(char cType)   //defaults to 0.0 degrees
 	{
@@ -27,13 +27,13 @@ public class Temperature{
 	{
 		type = 'C';
 		degrees = 0.0;
-                scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
 	}
 
 	public void writeOutput()   //prints temp(C), temp(F)
 	{
 		System.out.println("<" + Math.round(getC()*10)/10.0 + "> degrees Celsius, <" + Math.round(getF()*10)/10.0 + "> degrees Fahrenheit");
-	}
+	}	
 	public void writeC()   //prints temp(C)
 	{
 		System.out.println("<" + Math.round(getC()*10)/10.0 + "> degrees Celsius");
@@ -78,21 +78,21 @@ public class Temperature{
 	{
 		if(type != cType && (cType == 'C' || cType == 'F'))
 		{
-			if(type == 'C')
-			{
-				degrees = (degrees-32) * (5/9);
-			}
-			else
-			{
-				degrees = (degrees * (9/5)) + 32;
-			}
+			// if(type == 'C')
+			// {
+			// 	degrees = (degrees-32) * (5/9);
+			// }
+			// else
+			// {
+			// 	degrees = (degrees * (9/5)) + 32;
+			// }
 			type = cType;
 		}
 	}
 
         public boolean equals(Temperature otherTemp) //WORK ON LATER
 	{
-		if(otherTemp.getC() == getC()){
+		if(otherTemp.getC() == this.getC()){
 			return true;
 		}
 		else
@@ -103,7 +103,7 @@ public class Temperature{
 
 	public String toString()   //returns type & value; Math.round(temperature*10)/10.0
 	{
-		String toReturn = "ERROR! Invalid value of TYPE variable (not C or F). Called in toString";
+		String toReturn = "ERROR! Invalid value of TYPE variable (not C or F). Called from the toString() method";
 		if(type == 'C')
 		{
 			toReturn = Math.round(getC()*10)/10.0 + " C";
