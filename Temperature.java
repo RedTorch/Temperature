@@ -157,8 +157,8 @@ public class Temperature
 	//-------------------------------------------------------------------
 	public boolean equals(Temperature otherTemp)
 	{
-    	// Doesn't matter which one you compare 
-    	// getC or getF will give you the same result
+		// Doesn't matter which one you compare 
+		// getC or getF will give you the same result
 		if(otherTemp.getC() == getC() && otherTemp.getF() == getF())  
 		{
 			return true;
@@ -190,23 +190,23 @@ public class Temperature
 	//	Extra credit: get input from user.
 	//-------------------------------------------------------------------
 	public void readInput()
-    { 
-        // :important:
-        // I am using nextLine() to get String.
-        // This is because nextDouble() skips nextLine for some unknown reason
-        String inputDegrees;  // Intentional!
-        String inputType;     // Intentional!
-        
-        System.out.println("Enter the degrees desired");
-        inputDegrees = scanner.nextLine();
-        do {  // this is to prevent typo
-            System.out.println("Enter the F for fahrenheit or C for Celsius");
-            inputType = scanner.nextLine();
-        }while((!inputType.toUpperCase().equals("C") && 
-        		!inputType.toUpperCase().equals("F")));
-        
-        degrees = Double.parseDouble(inputDegrees);
-        type = (char)inputType.toUpperCase().charAt(0);  // There is no nextChar() so 
-                                            // I had to find a way to convert string to char
+	{ 
+		// :important:
+		// I am using nextLine() to get String.
+		// This is because nextDouble() skips nextLine for some unknown reason
+		String inputDegrees;  // Intentional!
+		String inputType;     // Intentional!
+
+		System.out.println("Enter the degrees desired");
+		inputDegrees = scanner.nextLine();
+		do {  // this is to prevent typo
+			System.out.println("Enter the F for fahrenheit or C for Celsius");
+			inputType = scanner.nextLine();
+		}while((!inputType.toUpperCase().equals("C") && 
+				!inputType.toUpperCase().equals("F")));
+
+		degrees = Double.parseDouble(inputDegrees);
+		type = (char)inputType.toUpperCase().charAt(0);  // There is no nextChar() so 
+												// I had to find a way to convert string to char
     }
 }
