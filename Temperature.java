@@ -24,7 +24,7 @@ public class Temperature
 	//-------------------------------------------------------------------
 	//	Constructor: Sets up degrees with specified value.
 	//-------------------------------------------------------------------
-	public Temperature(double dDegrees)   //defaults to Celsius
+	public Temperature(double dDegrees)
 	{
 		degrees = dDegrees;
 		type = 'C';
@@ -57,7 +57,7 @@ public class Temperature
 	public void writeOutput()
 	{
 		System.out.println("<" + getC() + "> degrees Celsius, <" + 
-								 getF() + "> degrees Fahrenheit");
+					 getF() + "> degrees Fahrenheit");
 	}
 	
 	//-------------------------------------------------------------------
@@ -207,6 +207,6 @@ public class Temperature
 
 		degrees = Double.parseDouble(inputDegrees);
 		type = (char)inputType.toUpperCase().charAt(0);  // There is no nextChar() so 
-												// I had to find a way to convert string to char
+								 // I had to find a way to convert string to char
     }
 }
