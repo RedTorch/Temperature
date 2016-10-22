@@ -1,0 +1,24 @@
+P = Passed
+F = Failed
+    after getC()  after getF()  after set(char)  
+1)  P		  P             P
+2)  Skipped       P             P
+3)  P		  P             P
+4)  P		  P             P
+5)  P		  P             P
+6)  P		  P             P
+7)  P		  P             P
+8)  P		  P             P
+9)  F		  P             P
+10) P		  P             P
+11) P		  P             P
+12) F		  P             P
+13) P		  P             P
+14) P		  P             P
+15) F		  P             P
+16) F		  P             P
+17) F		  F             P
+18) P		  P             P
+19) P		  P             P
+20) P		  P             P
+21) P		  P             P
